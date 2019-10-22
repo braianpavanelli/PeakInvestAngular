@@ -1,0 +1,69 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="card highlight-card">
+        <div>
+          <h3>Cálculo Valor Total</h3>
+        </div>
+        <hr />
+        <div class="form-group row">
+            <label for="txtValor" class="col-sm-5 col-form-label"
+              >Valor</label
+            >
+            <div class="col-sm-12">
+                <input
+                id="txtValor"
+                class="form-control col-sm-4"
+                placeholder="Digite o valor pretendido"
+                currencyMask
+                [(ngModel)]="valorPretendido"
+                [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+              />
+            </div>
+          </div>
+            <div class="form-group row">
+                <label for="txtParcelas" class="col-sm-5 col-form-label"
+                  >Parcelas</label
+                >
+                <div class="col-sm-12">
+                    <input
+                    id="txtParcelas"
+                    class="form-control col-sm-4"
+                    style="text-align: right;"
+                    type="number"
+                    placeholder="Número de Parcelas"
+                    [(ngModel)]="numeroParcelas"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                  <div class="col-sm-12">
+                      <button
+                      mdbBtn color="amber" mdbWavesEffect
+                        class="btn btn-primary col-sm-3"
+                        (click)="getValor(valorPretendido, numeroParcelas)"
+                        formtarget="_blank"
+                      >
+                      Calcular
+                      </button>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="txtValorTotal" class="col-sm-5 col-form-label"
+                      >O Valor Total da Simulação é:</label
+                    >
+                    <div class="col-sm-12">
+                        <input
+                          id="txtValorTotal"
+                          class="form-control col-sm-4"
+                          currencyMask
+                          [(ngModel)]="valorTotal"
+                          [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                        />
+                    </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+</div>

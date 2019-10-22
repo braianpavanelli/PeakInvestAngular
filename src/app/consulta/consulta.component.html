@@ -1,0 +1,65 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="card highlight-card">
+        <div>
+          <h3>Lista de Usuários</h3>
+        </div>
+        <hr />
+        <!-- <label>Selecione um Usuário</label>
+            <ng-select
+                      [items] = "dataSource"
+                      placeholder="Selecione um Usuário"
+                      [(ngModel)]="selectedUserId">
+                    </ng-select>
+
+                    <-- <select  class="form-control"  formControlName="Usuarios"  [(ngModel)]="selectedUserId">
+                        <option value="">--Select--</option>
+                        <option *ngFor="let user of dataSource | async" value={{user.id}}>
+                            {{user.nome}}
+                        </option>
+                  </select> ->
+            <p>
+                Usuário Selecionado: {{selectedUserId | json}}
+            </p>
+            <hr /> -->
+        <div class="form-group row">
+          <label for="txtNumero" class="col-sm-5 col-form-label"
+            >Digite um número</label
+          >
+          <div class="col-sm-12">
+            <input
+              id="txtNumero"
+              class="form-control col-sm-5"
+              type="number"
+              max="3"
+              width="99%"
+              placeholder="Digite um número de 1 a 3"
+              [(ngModel)]="userId"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-5">
+            <button
+            mdbBtn color="amber" mdbWavesEffect
+              class="btn btn-primary col-sm-12"
+              (click)="getUsuario(userId)"
+              formtarget="_blank"
+            >
+              Procurar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-6">
+          Usuário Encontrado: <span class="col-3">{{ usuario | json }}</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-2"></div>
+</div>
